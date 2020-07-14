@@ -148,7 +148,7 @@ namespace HL7.Library
             var clientStream = tcpClient.GetStream();
 
             var message = new byte[4096];
-            var encoding = new UTF8Encoding();
+            var encoding = new UTF32Encoding();
 
             while (true)
             {
@@ -160,7 +160,7 @@ namespace HL7.Library
                     do
                     {
                         bytesRead = clientStream.Read(message, 0, 4096);
-                        completeMessage.AppendFormat("{0}", Encoding.ASCII.GetString(message, 0, bytesRead));
+                        completeMessage.AppendFormat("{0}", Encoding.UTF32.GetString(message, 0, bytesRead));
                     }
                     while (clientStream.DataAvailable);
                 }

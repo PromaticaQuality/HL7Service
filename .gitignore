@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/HL7 Service/HL7.Library/obj/Debug
+/HL7 Service/.vs/Webtracker Utilities/v16/.suo
+/HL7 Service/HL7.Library/bin/Debug
+/HL7 Service/Promatica.HL7Test/bin/Debug
+/HL7 Service/Promatica.HL7Test/obj/Debug
+/HL7 Service/Promatica.PASService/obj/Debug
