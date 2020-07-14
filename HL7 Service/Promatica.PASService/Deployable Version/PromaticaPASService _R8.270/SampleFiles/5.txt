@@ -1,0 +1,6 @@
+MSH|^~\&|IFS|""|PHARMACY_WEBTRACKER|Pharmacy|20131119095334||ADT^A31|RA7_2367787|P|2.4
+EVN||20121030115957
+PID||T6571481^^^""^DIS^IFS|T6571481^^^1^HOSP^""~4868145088^^^1^NN^01~E0423245^^^1^A\T\E^""~B7IYT^^^1^RID^""~2249499E^^^1^BEH^""~6571481^^^1^DIS^""||Jordan^Helen Theresa^""^""^Miss^""^C||19661013|F|JORDAN^HELEN^""^""^""^""^A||96 GUEST AVENUE^EMERSONS GREEN^BRISTOL^""^BS16 7DA^""^P^""^^^""^""||0117 9248222^""^""^""|""|""~""~""~""~""~""|D||||||99||||||||N
+PD1|||The Willow Surgery^""^L81052^^^""^GP|G9600894^Benazon^L^""^""^Dr^""^""
+ZGP|The Willow Surgery^Hill House Road, Downend^Bristol^""^BS16 5FJ^""^""^""^^^""^""|0117 9709500^""^""^""
+NK1||JORDAN^B^""^""^""^""^""|N&""&""&""&""&""&""^Parent(s)^""^""^""^""|151 BADMINTON ROAD DOWNEND BRISTOL^""^""^""^""^""^""^""^^^""^""|956 3978^""^""^""||||||||||""

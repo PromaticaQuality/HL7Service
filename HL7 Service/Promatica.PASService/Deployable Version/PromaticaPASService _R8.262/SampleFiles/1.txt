@@ -1,0 +1,6 @@
+MSH|^~\&|IFSTEST|""|PHARMACY_WEBTRACKER|Pharmacy|20131113091814||ADT^A31|RA7_7062478|T|2.4
+EVN||20131113091812
+PID||T7780855^^^""^RID^IFS|T7780855^^^1^HOSP^""||Test^Charlotte^""^""^Miss^""^C||19900715|F|||4 Boot Lane^Bedminster^""^BRISTOL^BS3 4BD^""^P^""^^^""^""||""|""|""~""~""~""~""~""|U||||||99||||||||N
+PD1|||The Malago Surgery^""^L81035^^^""^GP|G8206196^Chambers^S^""^""^Dr^""^""
+ZGP|The Malago Surgery^40 St.John's Road^Bedminster^Bristol^BS3 4JE^""^""^""^^^""^""|0117 9663587^""^""^""
+NK1||Test^Megan^""^""^""^""^""|N&""&""&""&""&""&""^Parent(s)^""^""^""^""|16 High Street^Bedminster^Bristol^""^""^""^""^""^^^""^""|0117 342 6785^""^""^""||||||||||""

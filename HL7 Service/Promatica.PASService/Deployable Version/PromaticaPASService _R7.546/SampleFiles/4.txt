@@ -1,0 +1,13 @@
+MSH|^~\&|IFSTEST|""|PHARMACY_WEBTRACKER|Pharmacy|20131113092618||ADT^A31|RA7_7062482|T|2.4
+EVN||20131113092612
+PID||BAVBQ^^^""^RID^IFS|T7335008^^^1^HOSP^""~4307224418^^^1^NN^01~7335008^^^1^DIS^""~1749716M^^^1^BCH^""~1234325^^^1^BRI^""||Buchanan^Anna Claire^""^""^Mrs^""^C||19790511|F|||9 LIME ROAD^SOUTHVILLE^BRISTOL^""^BS3 1LS^""^P^""^^^""^""||""|07828804177^""^""^""|""~""~""~""~""~""|M||||||A||||||||N
+PD1|||Bedminster Family Practice^""^L81082^^^""^GP|G9811953^Collyer^J^""^""^Dr^""^""
+ZGP|Bedminster Family Pract^Regent Road, Bedminster^Bristol^""^BS3 4AT^""^""^""^^^""^""|0117 9663149^""^""^""
+NK1||BUCHANAN^RODNEY^""^""^""^""^""|N&""&""&""&""&""&""^Not Set^""^""^""^""|(Spouse or Civil Partner) 9 LIME ROAD SOUTHVILLE BRISTOL BS3 1LS^""^""^""^""^""^""^""^^^""^""|07828248245^""^""^""||||||||||""
+MSH|^~\&|IFSTEST|""|PHARMACY_WEBTRACKER|Pharmacy|20131113092221||ADT^A31|RA7_7062481|T|2.4
+EVN||20131113092218
+PID||B5CP_O^^^""^RID^IFS|T6071243^^^1^HOSP^""~4726180819^^^1^NN^01~6071243^^^1^DIS^""~2266747^^^1^ICS^""~1197475^^^1^BRI^""~E0329068^^^1^A\T\E^""||Brown^Elizabeth May^""^""^Ms^""^C||19381026|F|||2 Tucking Mill Cottages^Midford^""^BATH^BA2 7DB^""^P^""^^^""^""||0117 9734687^""^""^""|""|""~""~""~""~""~""|M||||||A||||||||N
+PD1|||Sea Mills Surgery^""^L81077^^^""^GP|G3352645^Silvey^HS^""^""^Dr^""^""
+ZGP|Sea Mills Surgery^2 Riverleaze, Sea Mills^Bristol^""^BS9 2HL^""^""^""^^^""^""|0117 9681182^""^""^""
+NK1||BROWN^GORDON^""^""^""^""^""|N&""&""&""&""&""&""^Not Set^""^""^""^""|2 Tucking Mill Cottages^Midford^BATH^BA2 7DB^""^""^""^""^^^""^""|0117 9734687^""^""^""||||||||||""
+

@@ -1,0 +1,120 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HL7.Library", "HL7.Library\HL7.Library.csproj", "{751E0D96-94EC-4E29-AC64-7D188480EAEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Promatica.PASService", "Promatica.PASService\Promatica.PASService.csproj", "{DBACE7B6-9D43-4EEC-9AF4-B93E0F50F2B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Promatica.HL7Test", "Promatica.HL7Test\Promatica.HL7Test.csproj", "{32D8B51F-43D8-4BAA-879A-0A4858314E28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HL7.TestSender", "HL7.TestSender\HL7.TestSender.csproj", "{6CB76EFC-1F46-42CC-8EAF-D16ECFF46AF3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{D1D97CD3-8685-442A-ADFC-A7221E4CEB1E}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PAS Services", "PAS Services", "{510F01BA-2859-4E28-9AB6-EBAD69442B0A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DMD Services", "DMD Services", "{74EDC78A-89AB-40BC-95B3-BECEA0B63FF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DmdEntities", "DMD Services\DmdEntities\DmdEntities.csproj", "{51AC0D60-4397-47FF-BF53-4E3B6328B586}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Promatica", "DMD Services\Promatica\Promatica.csproj", "{D97A40BF-521A-4811-BE33-56536DD5B3D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Promatica.DmdETLoader", "DMD Services\Promatica.DmdETLoader\Promatica.DmdETLoader.csproj", "{A56DDD12-743F-4230-B82A-32CF267BB7BC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F05B708A-78C2-42A3-8DC2-0B13A20B6BB5}"
+	ProjectSection(SolutionItems) = preProject
+		DeveloperNotes.txt = DeveloperNotes.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{751E0D96-94EC-4E29-AC64-7D188480EAEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{751E0D96-94EC-4E29-AC64-7D188480EAEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{751E0D96-94EC-4E29-AC64-7D188480EAEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{751E0D96-94EC-4E29-AC64-7D188480EAEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBACE7B6-9D43-4EEC-9AF4-B93E0F50F2B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBACE7B6-9D43-4EEC-9AF4-B93E0F50F2B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBACE7B6-9D43-4EEC-9AF4-B93E0F50F2B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBACE7B6-9D43-4EEC-9AF4-B93E0F50F2B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32D8B51F-43D8-4BAA-879A-0A4858314E28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32D8B51F-43D8-4BAA-879A-0A4858314E28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32D8B51F-43D8-4BAA-879A-0A4858314E28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32D8B51F-43D8-4BAA-879A-0A4858314E28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CB76EFC-1F46-42CC-8EAF-D16ECFF46AF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CB76EFC-1F46-42CC-8EAF-D16ECFF46AF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CB76EFC-1F46-42CC-8EAF-D16ECFF46AF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CB76EFC-1F46-42CC-8EAF-D16ECFF46AF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51AC0D60-4397-47FF-BF53-4E3B6328B586}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51AC0D60-4397-47FF-BF53-4E3B6328B586}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51AC0D60-4397-47FF-BF53-4E3B6328B586}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51AC0D60-4397-47FF-BF53-4E3B6328B586}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D97A40BF-521A-4811-BE33-56536DD5B3D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D97A40BF-521A-4811-BE33-56536DD5B3D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D97A40BF-521A-4811-BE33-56536DD5B3D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D97A40BF-521A-4811-BE33-56536DD5B3D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A56DDD12-743F-4230-B82A-32CF267BB7BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A56DDD12-743F-4230-B82A-32CF267BB7BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A56DDD12-743F-4230-B82A-32CF267BB7BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A56DDD12-743F-4230-B82A-32CF267BB7BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{751E0D96-94EC-4E29-AC64-7D188480EAEA} = {510F01BA-2859-4E28-9AB6-EBAD69442B0A}
+		{DBACE7B6-9D43-4EEC-9AF4-B93E0F50F2B6} = {510F01BA-2859-4E28-9AB6-EBAD69442B0A}
+		{32D8B51F-43D8-4BAA-879A-0A4858314E28} = {510F01BA-2859-4E28-9AB6-EBAD69442B0A}
+		{6CB76EFC-1F46-42CC-8EAF-D16ECFF46AF3} = {510F01BA-2859-4E28-9AB6-EBAD69442B0A}
+		{51AC0D60-4397-47FF-BF53-4E3B6328B586} = {74EDC78A-89AB-40BC-95B3-BECEA0B63FF7}
+		{D97A40BF-521A-4811-BE33-56536DD5B3D7} = {74EDC78A-89AB-40BC-95B3-BECEA0B63FF7}
+		{A56DDD12-743F-4230-B82A-32CF267BB7BC} = {74EDC78A-89AB-40BC-95B3-BECEA0B63FF7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2A5A1ED6-A354-4796-BE82-16CCBBD8FFFB}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://promaticaphl.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = HL7.Library\\HL7.Library.csproj
+		SccProjectTopLevelParentUniqueName1 = Webtracker\u0020Utilities.sln
+		SccProjectName1 = HL7.Library
+		SccLocalPath1 = HL7.Library
+		SccProjectUniqueName2 = Promatica.PASService\\Promatica.PASService.csproj
+		SccProjectTopLevelParentUniqueName2 = Webtracker\u0020Utilities.sln
+		SccProjectName2 = Promatica.PASService
+		SccLocalPath2 = Promatica.PASService
+		SccProjectUniqueName3 = Promatica.HL7Test\\Promatica.HL7Test.csproj
+		SccProjectTopLevelParentUniqueName3 = Webtracker\u0020Utilities.sln
+		SccProjectName3 = Promatica.HL7Test
+		SccLocalPath3 = Promatica.HL7Test
+		SccProjectUniqueName4 = HL7.TestSender\\HL7.TestSender.csproj
+		SccProjectTopLevelParentUniqueName4 = Webtracker\u0020Utilities.sln
+		SccProjectName4 = HL7.TestSender
+		SccLocalPath4 = HL7.TestSender
+		SccProjectUniqueName5 = DMD\u0020Services\\DmdEntities\\DmdEntities.csproj
+		SccProjectTopLevelParentUniqueName5 = Webtracker\u0020Utilities.sln
+		SccProjectName5 = DMD\u0020Services/DmdEntities
+		SccLocalPath5 = DMD\u0020Services\\DmdEntities
+		SccProjectUniqueName6 = DMD\u0020Services\\Promatica\\Promatica.csproj
+		SccProjectTopLevelParentUniqueName6 = Webtracker\u0020Utilities.sln
+		SccProjectName6 = DMD\u0020Services/Promatica
+		SccLocalPath6 = DMD\u0020Services\\Promatica
+		SccProjectUniqueName7 = DMD\u0020Services\\Promatica.DmdETLoader\\Promatica.DmdETLoader.csproj
+		SccProjectTopLevelParentUniqueName7 = Webtracker\u0020Utilities.sln
+		SccProjectName7 = DMD\u0020Services/Promatica.DmdETLoader
+		SccLocalPath7 = DMD\u0020Services\\Promatica.DmdETLoader
+	EndGlobalSection
+EndGlobal

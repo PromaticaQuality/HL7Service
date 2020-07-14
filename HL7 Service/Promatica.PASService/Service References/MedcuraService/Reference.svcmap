@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f2d8dfad-d2a4-43eb-94e2-c30b1df8196b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://services.medcura.co.uk/Medcura.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Medcura.xsd" MetadataType="Schema" ID="fe192e66-22be-49b0-b4d2-b6c69d4e1950" SourceId="1" SourceUrl="http://services.medcura.co.uk/Medcura.svc?xsd=xsd1" />
+    <MetadataFile FileName="Medcura1.xsd" MetadataType="Schema" ID="418289ae-e864-426f-80ab-8fb97ca6547b" SourceId="1" SourceUrl="http://services.medcura.co.uk/Medcura.svc?xsd=xsd0" />
+    <MetadataFile FileName="MedcuraService.wsdl" MetadataType="Wsdl" ID="d6aad0b6-fd83-4e0f-8536-e6a37981721d" SourceId="1" SourceUrl="http://services.medcura.co.uk/Medcura.svc?wsdl" />
+    <MetadataFile FileName="Medcura2.xsd" MetadataType="Schema" ID="b906c5f5-146f-4909-aad9-bc221c1fa0b5" SourceId="1" SourceUrl="http://services.medcura.co.uk/Medcura.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

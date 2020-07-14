@@ -1,0 +1,12 @@
+RZ Change: 10/10/2018  PBH Support
+-------------------------------------
+PBH changes to support Merge message and Included app.config changes
+
+ADD PROPERTY
+    <add key="MRGHasFirstSegmentAsPasID" value="True"/>
+
+UPDATE PROPERTY
+    <add key="PASDateSourceFormat" value="yyyyMMdd" />
+    <add key="HL7Segment_INDEX" value="4"/>
+    <add key="HL7Segment_PASID" value="HOSP"/>
+-------------------------------------
