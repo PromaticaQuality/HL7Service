@@ -212,11 +212,33 @@ namespace HL7.Library
         {
             var currentLocation = source.Split('|')[3];
             var priorLocation = source.Split('|')[6];
+            AttendingDoctor = source.Split('|')[7];
+            ReferringDoctor = source.Split('|')[8];
+            ConsultingDoctor = source.Split('|')[9];
+            ChargePriceIndicator = source.Split('|')[21];
+
+            var admissionDate = source.Split('|')[44];
+
+            var isValidDate = DateTime.TryParse(admissionDate, CultureInfo.CurrentCulture, DateTimeStyles.AssumeLocal, out DateTime admissionDateParsed);
+            AdmissionDate = isValidDate ? admissionDateParsed : (DateTime?)null;
+
+            var dischargeDate = source.Split('|')[45];
+            isValidDate = DateTime.TryParse(dischargeDate, CultureInfo.CurrentCulture, DateTimeStyles.AssumeLocal, out DateTime dischargeDateParsed);
+            DischargedDate = isValidDate ? dischargeDateParsed : (DateTime?)null;
 
             CurrentLocationUnitCode = currentLocation.Split('^')[4];
             PreviousLocationUnitCode = priorLocation.Split('^')[4];
         }
-      
+
+        public DateTime? DischargedDate { get; set; }
+
+        public DateTime? AdmissionDate { get; set; }
+
+        public string AttendingDoctor { get; set; }
+        public string ReferringDoctor { get; set; }
+        public string ConsultingDoctor { get; set; }
+        public string ChargePriceIndicator { get; set; }
+
 
         private void ProcessIdentifiers(string segment)
         {

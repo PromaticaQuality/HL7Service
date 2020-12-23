@@ -132,9 +132,9 @@ namespace HL7.Library
             while (true)
             {
                 var acceptTcpClient = serverTcpListener.AcceptTcpClient();
-                
+
                 LogEvent("Connected.");
-                
+
                 var clientThread = new Thread(HandleClientComm);
                 clientThread.Start(acceptTcpClient);
                 Thread.Sleep(50);
@@ -144,11 +144,11 @@ namespace HL7.Library
         private void HandleClientComm(object client)
         {
             tcpClient = (TcpClient)client;
-       
+
             var clientStream = tcpClient.GetStream();
 
             var message = new byte[4096];
-            var encoding = new UTF32Encoding();
+            var encoding = new UTF8Encoding();
 
             while (true)
             {
@@ -160,7 +160,7 @@ namespace HL7.Library
                     do
                     {
                         bytesRead = clientStream.Read(message, 0, 4096);
-                        completeMessage.AppendFormat("{0}", Encoding.UTF32.GetString(message, 0, bytesRead));
+                        completeMessage.AppendFormat("{0}", Encoding.ASCII.GetString(message, 0, bytesRead));
                     }
                     while (clientStream.DataAvailable);
                 }
@@ -218,23 +218,23 @@ namespace HL7.Library
             }
 
             tcpClient.Close();
-            
+
         }
 
-        private void ProcessMessage(string data, NetworkStream networkStream, bool? isBulkUpload=null)
+        private void ProcessMessage(string data, NetworkStream networkStream, bool? isBulkUpload = null)
         {
             var encoding = new UTF8Encoding();
             //Process data
 
             var message = new Message(data, ConfigSettings.PasDateSourceFormat);
-                
+
             try
             {
                 LogEvent("Processing:\n" + data);
-                
+
                 if (message.IsValid)
                 {
-                 
+
                     //Send the raw data
                     LogEvent(data);
 
@@ -253,20 +253,20 @@ namespace HL7.Library
                 }
                 else
                 {
-                    LogEvent("Error: "+ message.Error);
+                    LogEvent("Error: " + message.Error);
 
                     //if (ConfigSettings.EnableErrorAcknowledgement)
                     //{
-                        networkStream.Write(encoding.GetBytes(message.ErrorAcknowledgeMessage), 0,
-                            message.ErrorAcknowledgeMessage.Length);
+                    networkStream.Write(encoding.GetBytes(message.ErrorAcknowledgeMessage), 0,
+                        message.ErrorAcknowledgeMessage.Length);
 
-                        LogEvent("Aknowledgement Sent for Error Message: " + message.ErrorAcknowledgeMessage);
+                    LogEvent("Aknowledgement Sent for Error Message: " + message.ErrorAcknowledgeMessage);
                     //}
                 }
             }
             catch (Exception ex)
             {
-                LogEvent("Error:"+ex.Message);
+                LogEvent("Error:" + ex.Message);
             }
         }
 
@@ -294,7 +294,7 @@ namespace HL7.Library
                         cmd.Parameters.AddWithValue("@Pas_Nhs_no", patientProperties.NhsNo);
                         cmd.Parameters.AddWithValue("@RID", patientProperties.Rid);
                         cmd.Parameters.AddWithValue("@MessageType", "HL7");
-                        cmd.Parameters.AddWithValue("@IsMerged", (message.Header.MessageType=="A40" && !string.IsNullOrEmpty(patientProperties.MergePreviousId)));
+                        cmd.Parameters.AddWithValue("@IsMerged", (message.Header.MessageType == "A40" && !string.IsNullOrEmpty(patientProperties.MergePreviousId)));
                         cmd.Parameters.AddWithValue("@ProcessType", message.Header.MessageType);
                         cmd.Parameters.AddWithValue("@PreviousPASID", patientProperties.MergePreviousId);
                         cmd.Parameters.AddWithValue("@PreviousFirstname", patientProperties.MergePreviousFirstName);
@@ -308,7 +308,7 @@ namespace HL7.Library
                             cmd.Parameters.AddWithValue("@PatientPostcode", patientProperties.PatientPostCode ?? "");
                             cmd.Parameters.AddWithValue("@PatientGender", patientProperties.PatientGender ?? "");
                             cmd.Parameters.AddWithValue("@PatientTitle", patientProperties.PatientTitle ?? "");
-                            cmd.Parameters.AddWithValue("@GPName", patientProperties.GPName??"");
+                            cmd.Parameters.AddWithValue("@GPName", patientProperties.GPName ?? "");
                             cmd.Parameters.AddWithValue("@GPCode", patientProperties.GPCode ?? "");
                             cmd.Parameters.AddWithValue("@GPAddress", patientProperties.GPAddress ?? "");
                             cmd.Parameters.AddWithValue("@GPPostcode", patientProperties.GPPostCode ?? "");

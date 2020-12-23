@@ -10,3 +10,7 @@ UPDATE PROPERTY
     <add key="HL7Segment_INDEX" value="4"/>
     <add key="HL7Segment_PASID" value="HOSP"/>
 -------------------------------------
+22/12/2020 : RH Changes - Implemented A03 messages processing
+New columns for Patient Admit & Discharge added
+3_AdmissionDischargeInfo.sql
+-------------------------------------

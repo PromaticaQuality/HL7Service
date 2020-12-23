@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Apps\1_PasSetup.sql" />
+    <Content Include="Apps\3_AdmissionDischargeInfo.sql" />
     <Content Include="Apps\2_PatientAdditionalInfo.sql" />
     <Content Include="Files\HL7\PatientTest1.txt" />
     <Content Include="Files\HL7\PatientTest2.txt" />
