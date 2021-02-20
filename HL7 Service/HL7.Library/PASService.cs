@@ -221,6 +221,13 @@ namespace HL7.Library
 
         }
 
+        public void TestDebug()
+        {
+            var hl7 =
+                "MSH|^~\\&|MEDWAY^5.0.7.6|RXH|ROUTE|ROUTE|20201221141957838+0000||ADT^A31^ADT_A05|RXH_11135385|P|2.4|11135385||\"\"|\"\"|GBR|UNICODE UTF-8|EN||\"\"\r\nEVN|A31|20201221141956740+0000||||20201221141956740+0000\r\nPID|1||4078323^\"\"^^RXH^HOSP~\"\"^\"\"^^NHS^NHS||Epmamon^Rdstest^^^Mr^^L||19551203|9|||1 North Road^^^BRIGHTON^BN1 1YA^GBR^CurrentMAIN^^^^^20201221&\"\"~1 North Road^^^BRIGHTON^BN1 1YA^GBR^MAIN^^^^^20201221&\"\"||07999123456^PH^MOD~012345777777^PH^PRN~demo@email.com^Internet^NET|01254777777^PH^WPN||W|D2|||||A|||||||\"\"|N|\"\"|NSTS03\r\nPD1|||Regency Surgery^^G81656|G9048407^Wilson^SM^^^Dr^^^^^^^GP\r\nNK1|1|NextofKin|04|1 North Road,BRIGHTON,BN1 1YA|012345777777|07999123456|NK\r\nNK1|2|Daughter|09a|1 North Road,BRIGHTON,BN1 1YA|012345777777|07999123456|EC\r\nROL|G81656|UP|FHCP|G9048407^Wilson^SM^^^Dr^^^^^^^GP|||||||Regency Surgery^4 Old Steine^Brighton^East Sussex^BN1 1FZ^GBR^^\"\"\r\n";
+            ProcessMessage(hl7, null, null);
+        }
+
         private void ProcessMessage(string data, NetworkStream networkStream, bool? isBulkUpload = null)
         {
             var encoding = new UTF8Encoding();
@@ -246,8 +253,11 @@ namespace HL7.Library
 
                     LogEvent("Connecting to Sender.");
 
-                    //if successful send a response
-                    networkStream.Write(encoding.GetBytes(message.AcknowledgeMessage), 0, message.AcknowledgeMessage.Length);
+                    if (networkStream != null)
+                    {
+                        //if successful send a response
+                        networkStream.Write(encoding.GetBytes(message.AcknowledgeMessage), 0, message.AcknowledgeMessage.Length);
+                    }
 
                     LogEvent("Aknowledgement Sent: " + message.AcknowledgeMessage);
                 }
@@ -255,13 +265,12 @@ namespace HL7.Library
                 {
                     LogEvent("Error: " + message.Error);
 
-                    //if (ConfigSettings.EnableErrorAcknowledgement)
-                    //{
-                    networkStream.Write(encoding.GetBytes(message.ErrorAcknowledgeMessage), 0,
-                        message.ErrorAcknowledgeMessage.Length);
+                    if (networkStream != null)
+                    {
+                        networkStream.Write(encoding.GetBytes(message.ErrorAcknowledgeMessage), 0, message.ErrorAcknowledgeMessage.Length);
+                    }
 
                     LogEvent("Aknowledgement Sent for Error Message: " + message.ErrorAcknowledgeMessage);
-                    //}
                 }
             }
             catch (Exception ex)
@@ -314,6 +323,18 @@ namespace HL7.Library
                             cmd.Parameters.AddWithValue("@GPPostcode", patientProperties.GPPostCode ?? "");
                             cmd.Parameters.AddWithValue("@GPDoctorName", patientProperties.GPDoctorName ?? "");
                             cmd.Parameters.AddWithValue("@GPDoctorCode", patientProperties.GPDoctorCode ?? "");
+                            //@AdmittedDate,@DischargeDate,@ChargeIndicator,@AttendingDoctor,@ReferringDoctor,@ConsultingDoctor, @MobileNumber, @PhoneNumber, @WorkPhoneNumber, @Email, @WorkEmail
+                            cmd.Parameters.AddWithValue("@AdmittedDate", patientProperties.AdmissionDate ?? DateTime.Parse("01 Jan 1900"));
+                            cmd.Parameters.AddWithValue("@DischargeDate", patientProperties.DischargedDate ?? DateTime.Parse("01 Jan 1900"));
+                            cmd.Parameters.AddWithValue("@ChargeIndicator", patientProperties.ChargePriceIndicator ?? "");
+                            cmd.Parameters.AddWithValue("@AttendingDoctor", patientProperties.AttendingDoctor ?? "");
+                            cmd.Parameters.AddWithValue("@ReferringDoctor", patientProperties.ReferringDoctor ?? "");
+                            cmd.Parameters.AddWithValue("@ConsultingDoctor", patientProperties.ConsultingDoctor ?? "");
+                            cmd.Parameters.AddWithValue("@MobileNumber", patientProperties.MobileNumber ?? "");
+                            cmd.Parameters.AddWithValue("@PhoneNumber", patientProperties.PhoneNumber ?? "");
+                            cmd.Parameters.AddWithValue("@WorkPhoneNumber", patientProperties.WorkPhoneNumber ?? "");
+                            cmd.Parameters.AddWithValue("@Email", patientProperties.Email ?? "");
+                            cmd.Parameters.AddWithValue("@WorkEmail", patientProperties.WorkEmail ?? "");
                         }
                         conn.Open();
                         cmd.ExecuteNonQuery();

@@ -9,7 +9,8 @@ namespace Promatica.HL7Test
     {
         static void Main(string[] args)
         {
-           new HL7.Library.PasService().InitialisePasService();
+           //new HL7.Library.PasService().InitialisePasService();
+           new HL7.Library.PasService().TestDebug();
         }
 
     }

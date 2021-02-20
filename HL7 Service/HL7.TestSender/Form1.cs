@@ -47,7 +47,7 @@ namespace HL7.TestSender
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-
+            
             this.txtResponse.Text = "";
 
             try

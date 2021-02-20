@@ -38,7 +38,11 @@ namespace HL7.Library
         public string PatientGender { get; set; }
         public string PatientTitle { get; set; }
 
+        public string MobileNumber { get; set; }
         public string PhoneNumber { get; set; }
+        public string Email { get; set; }
+        public string WorkPhoneNumber { get; set; }
+        public string WorkEmail { get; set; }
 
         public string GPName { get; set; }
 
@@ -100,7 +104,15 @@ namespace HL7.Library
 
                         ProcessAddress(values[11]);
 
-                        ProcessPhoneNumber(values[13]);
+                        if (values.Length > 13 && !string.IsNullOrWhiteSpace(values[13]))
+                        {
+                            ProcessContacts(values[13], false);
+                        }
+
+                        if (values.Length > 14 && !string.IsNullOrWhiteSpace(values[14]))
+                        {
+                            ProcessContacts(values[14], true);
+                        }
 
                         IsValid = !String.IsNullOrEmpty(this.PasId);
                         if (String.IsNullOrEmpty(this.PasId))
@@ -131,8 +143,37 @@ namespace HL7.Library
 
             Error = "There is no patient record in the message";
         }
-        private void ProcessPhoneNumber(string source)
+        private void ProcessContacts(string source, bool isWork)
         {
+            var phoneParts = source.Split(new[] {"~"}, StringSplitOptions.RemoveEmptyEntries);
+            foreach (var part in phoneParts)
+            {
+                var partFields = part.Split('^');
+                if (partFields[2] == "MOD")
+                {
+                    MobileNumber = partFields[0];
+                }
+                if (partFields[2] == "PRN")
+                {
+                    PhoneNumber = partFields[0];
+                }
+                if (partFields[2] == "WPN")
+                {
+                    WorkPhoneNumber = partFields[0];
+                }
+                if (partFields[2].Equals("Internet"))
+                {
+                    if (isWork)
+                    {
+                        WorkEmail = partFields[0];
+                    }
+                    else
+                    {
+                        Email = partFields[0];
+                    }
+                }
+            }
+
             PhoneNumber = source;
         }
 
