@@ -1,4 +1,4 @@
-RZ Change: 10/10/2018  PBH Support
+﻿RZ Change: 10/10/2018  PBH Support
 -------------------------------------
 PBH changes to support Merge message and Included app.config changes
 
@@ -14,3 +14,9 @@ UPDATE PROPERTY
 New columns for Patient Admit & Discharge added
 3_AdmissionDischargeInfo.sql
 -------------------------------------
+19 Feb, 2021  Contact details from PID segments
+-Script: 4_ContactInfoFromPID.sql
+-Deployed a new instance to Brighton at port 1235
+-Tested one sample message, will need to copy over v2 to live instance once tested
+-Script slready in the server
+–‐-------------------------------------
