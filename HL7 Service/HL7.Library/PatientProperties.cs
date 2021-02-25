@@ -161,7 +161,7 @@ namespace HL7.Library
                 {
                     WorkPhoneNumber = partFields[0];
                 }
-                if (partFields[2].Equals("Internet"))
+                if (partFields[2].Equals("NET", StringComparison.CurrentCultureIgnoreCase)|| partFields[2].Equals("INTERNET", StringComparison.CurrentCultureIgnoreCase))
                 {
                     if (isWork)
                     {
@@ -173,8 +173,6 @@ namespace HL7.Library
                     }
                 }
             }
-
-            PhoneNumber = source;
         }
 
         private void ProcessAddress(string source)
@@ -325,7 +323,9 @@ namespace HL7.Library
             foreach (string[] set in chunks.Select(chunk => chunk.Split("^"[0])))
             {
                 //The segment is the code which Identifies the NHS Number (e.g. NN or NHS )
-                if(set.Length>ConfigSettings.Hl7IdentifiersIndex && set[ConfigSettings.Hl7IdentifiersIndex]== ConfigSettings.Hl7PasidSegmentName && PasId==null)
+                if(set.Length>ConfigSettings.Hl7IdentifiersIndex &&
+                   
+                   set[ConfigSettings.Hl7IdentifiersIndex]== ConfigSettings.Hl7PasidSegmentName && PasId==null)
                 {
                     PasId = set[0];
                 }
